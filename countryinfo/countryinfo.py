@@ -28,7 +28,7 @@ class CountryInfo:
         for file_path in __files_path:
             if isfile(file_path):
                 with open(file_path, encoding='utf-8') as file:
-                    country_info = json.load(file)
+                    country_info = json.load(file, strict=False)
                     # pprint(country_info)
                     if country_info.get('name', None):
                         self.__countries[country_info['name'].lower()] = country_info
